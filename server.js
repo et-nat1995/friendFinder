@@ -1,0 +1,18 @@
+const express = require("express");
+const path = require("path");
+
+var app = express();
+
+var PORT = process.env.PORT || 8080;
+
+app.use(express.urlencoded({ extended: true}));
+app.use(express.json());
+
+// pass the app here into other places.
+require("./app/routing/htmlRoutes")(app);
+
+
+app.listen(PORT, () => {
+	console.log("App listening on PORT " + PORT);
+});
+
