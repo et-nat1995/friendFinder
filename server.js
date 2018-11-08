@@ -9,10 +9,10 @@ app.use(express.urlencoded({ extended: true}));
 app.use(express.json());
 
 // pass the app here into other places.
+require("./app/routing/apiRoutes")(app);
 require("./app/routing/htmlRoutes")(app);
 
 
 app.listen(PORT, () => {
 	console.log("App listening on PORT " + PORT);
 });
-
